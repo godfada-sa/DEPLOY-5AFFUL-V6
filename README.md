@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/safful.jpg" alt="SAFFUL // </vibe coder>" width="370" />
+<img src="https://raw.githubusercontent.com/godfada-sa/5AFFUL-BOT-V6/main/assets/safful-repo.jpg" alt="SAFFUL // </vibe coder>" width="370" />
 
 # `> SAFFUL_V6_`
 
@@ -31,6 +31,31 @@ safful@node:~$ cat /etc/motd
 
 <div align="center">
 
+## `[ 00 ]  //  G E T   T H E   F I L E`
+
+</div>
+
+**No folder inside a folder.** Use the release file, not the green *Code > Download ZIP* button.
+
+| FILE | WHAT YOU GET |
+|---|---|
+| [`deploy-5afful-v6.zip`](https://github.com/godfada-sa/DEPLOY-5AFFUL-V6/releases/latest/download/deploy-5afful-v6.zip) | a flat zip: `index.js` + this README, **no nested folder** |
+| [`index.js`](https://github.com/godfada-sa/DEPLOY-5AFFUL-V6/releases/latest/download/index.js) | the single file, straight to your downloads |
+
+```console
+# on the panel, in the main container:
+wget https://github.com/godfada-sa/DEPLOY-5AFFUL-V6/releases/latest/download/index.js
+# or
+curl -O https://github.com/godfada-sa/DEPLOY-5AFFUL-V6/releases/latest/download/index.js
+```
+
+Unzip the release file **in the main container** — the files land right there. Nothing to move.
+
+> The GitHub *Code > Download ZIP* always puts everything in `DEPLOY-5AFFUL-V6-main/`.
+> That is why this repo ships a flat release file: no extra folder, no moving.
+
+<div align="center">
+
 ## `[ 01 ]  //  T H E   L I N K`
 
 </div>
@@ -49,36 +74,43 @@ node index.js
 | `PAIR` | `fiveafful-pair.onrender.com` | 🟢 LIVE |
 | `RELAY` | `t.me/saf_ful` | 🟢 LIVE |
 
-<details>
-<summary><code>[ DECRYPT ]</code> &nbsp; click to reveal the payload</summary>
+<div align="center">
 
-<br />
+## `[ 02 ]  //  P A I R`
 
-> `index.js` is the whole deploy node: it fetches **5AFFUL V6**, installs the
-> packages and starts the bot. The IDs you paste are written to
-> `session_id.txt` on first boot. Nothing is hidden in the image, nothing is
-> hidden in the code — the only secret is the one you paste in.
+</div>
+
+> [!IMPORTANT]
+> **Pairing site:** [**https://fiveafful-pair.onrender.com**](https://fiveafful-pair.onrender.com)
 
 ```console
-[ root@safful ]# cat index.js | head -n 3
-#!/usr/bin/env node
-'use strict';
-// upload one file. that is the whole deployment.
+root@safful:~$ open https://fiveafful-pair.onrender.com
+[  ..  ] waiting for the site to wake up ... (free host, up to 1 minute)
+[  ..  ] request link code
+[  OK  ] open WhatsApp -> Linked devices -> Link a device
+[  OK  ] enter the code (or scan the QR)
+[ DONE ] session ID received:  TFX-XXXX-XXXX-XXXX
 ```
 
-</details>
+1. Open **https://fiveafful-pair.onrender.com**.
+2. In WhatsApp on the bot phone: **Linked devices → Link a device**.
+3. If the pairing code is not accepted, use the **QR code** option.
+4. The site gives you a session ID like `TFX-K7M2-9QXA-4BNP`.
+
+> [!WARNING]
+> The session ID burns **once** and dies in **5 minutes**. Paste it and boot within that window. If it expired, pair again and use the new ID.
 
 <div align="center">
 
-## `[ 02 ]  //  E X E C U T E`
+## `[ 03 ]  //  E X E C U T E`
 
 </div>
 
 ```console
-STEP 01  ->  spin up a Node.js 20+ panel
-STEP 02  ->  drop index.js in the root
-STEP 03  ->  paste the session ID in SESSION_IDS
-STEP 04  ->  node index.js
+STEP 01  ->  drop index.js in the main container
+STEP 02  ->  paste the session ID in SESSION_IDS
+STEP 03  ->  node index.js
+STEP 04  ->  bot online
 ```
 
 ```js
@@ -102,15 +134,12 @@ shop=TFX-YYYY-YYYY-YYYY
 | `node index.js --update` | re-download, keep `session/`, `data/`, `accounts/`, `session_id.txt` |
 | `BOT_NO_START=1 node index.js` | install only, do not boot |
 
-> [!WARNING]
-> `SESSION_ID` burns once and dies in **5 minutes**. Paste, then boot. No second chances.
-
 > [!CAUTION]
-> This is a WhatsApp bot. WhatsApp does not officially allow bots. Use a **spare number**, never your main one. Never share your session ID or pairing code.
+> WhatsApp does not officially allow bots. Use a **spare number**, never your main one. Never share your session ID or pairing code.
 
 <div align="center">
 
-## `[ 03 ]  //  S Y S T E M   S P E C S`
+## `[ 04 ]  //  S Y S T E M   S P E C S`
 
 </div>
 
@@ -118,7 +147,7 @@ shop=TFX-YYYY-YYYY-YYYY
 root@safful:~$ ./5afful --info
 name ............ 5AFFUL V6
 runtime ......... Node.js 20+
-commands ........ 346 / 15 categories
+commands ........ 347 / 15 categories
 defense ......... antilink :: antispam :: antiraid :: antibot
 payload ......... stickers :: downloads :: games :: tools
 login ........... fiveafful-pair.onrender.com
