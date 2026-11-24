@@ -1,58 +1,139 @@
-# ⚡ 5AFFUL V6
+<div align="center">
 
-A WhatsApp bot for running groups and chats: group protection, welcome messages, games, stickers, downloads and more.
+<img src="assets/safful.jpg" alt="SAFFUL // </vibe coder>" width="370" />
 
-<!-- counts: 346 commands, 15 categories -->
-Send `.menu` to see every command.
+# `> SAFFUL_V6_`
 
-> ⚠️ WhatsApp does not officially allow bots, and a bot number can be banned. Use a **spare number**, never your main one.
+### `</ v i b e   c o d e r >`
 
-## 1. Pair your number
+![STATUS](https://img.shields.io/badge/STATUS-ONLINE-00ff9c?style=for-the-badge&labelColor=0d1117)
+![MODE](https://img.shields.io/badge/MODE-DEPLOY-6ee7ff?style=for-the-badge&labelColor=0d1117)
+![ACCESS](https://img.shields.io/badge/ACCESS-OWNER__ONLY-ff4d6d?style=for-the-badge&labelColor=0d1117)
 
-Open the pairing site:
+**`// one file. one command. one bot.`**
 
-**https://fiveafful-pair.onrender.com**
-
-In WhatsApp on the bot's phone: *Linked devices → Link a device*. If the pairing code is not accepted, use the **QR code** option.
-
-The site then gives you a session ID that looks like `TFX-K7M2-9QXA-4BNP`. It works **once** and **expires after 5 minutes**, so paste it and start the bot right away. If it expired, link again and use the new ID. The site runs on a free host, so the first visit can take up to a minute.
-
-## 2. Start with `index.js`
-
-1. Create a server or panel with **Node.js 20 or newer**.
-2. Upload **`index.js`** to the main folder.
-3. Paste your session ID in the `SESSION_IDS` block near the top of `index.js`:
-   ```js
-   const SESSION_IDS = `
-   TFX-K7M2-9QXA-4BNP
-   `;
-   ```
-   A second number goes on a new line with a name: `shop=TFX-AB2C-DE3F-GH4J`.
-4. Start the server. The normal start command **`node index.js`** already works, so nothing has to be changed in the panel.
-5. On the first run `index.js` downloads the bot, installs the packages and starts it. This can take a few minutes.
-
-The IDs you pasted are copied into `session_id.txt` automatically; IDs already in the file are kept and only the missing ones are added.
-
-**Without the `SESSION_IDS` block:** leave it empty, start once, then paste `SESSION_ID=TFX-...` into `session_id.txt`, save, and restart.
-
-### Commands
-
-| Command | What it does |
-|---|---|
-| `node index.js` | Install on the first run, then start the bot |
-| `node index.js --update` | Download the newest version and start; keeps `session/`, `data/`, `accounts/`, `session_id.txt` and the settings file |
-| `BOT_NO_START=1 node index.js` | Install only, do not start |
-
-After the first successful start the bot keeps its login, so the session ID is not needed again. Never share your session ID or pairing code. Updates can also be installed in chat with `.update now` (owner only).
-
-## Hosting guides
-
-5AFFUL V6 is plain Node.js 20 or newer. It runs on a phone (Termux), a VPS, Docker, a hosting panel, or a normal computer: run `npm install` once, paste the session ID in `session_id.txt`, then `npm start`. Keep it alive with pm2, systemd or Docker's `restart: unless-stopped`.
-
-## Links
-
-- ✈️ Telegram: https://t.me/saf_ful
-- 💻 Source and releases: https://github.com/godfada-sa/5AFFUL-BOT-V6
+</div>
 
 ---
-5AFFUL V6 is made by Safful. Released under the MIT license.
+
+```console
+safful@node:~$ ssh deploy@5afful
+[  OK  ] handshake .............. accepted
+[  OK  ] identity ............... safful
+[  OK  ] payload ................ index.js
+[  ..  ] scanning target ........ 5afful-v6
+[ DONE ] access ................. GRANTED
+
+safful@node:~$ cat /etc/motd
+> this node deploys 5AFFUL V6.
+> nothing else is stored here.
+```
+
+<div align="center">
+
+## `[ 01 ]  //  T H E   L I N K`
+
+</div>
+
+```bash
+git clone https://github.com/godfada-sa/DEPLOY-5AFFUL-V6.git
+cd DEPLOY-5AFFUL-V6
+node index.js
+```
+
+**Target:** `https://github.com/godfada-sa/DEPLOY-5AFFUL-V6.git`
+
+| NODE | ADDRESS | STATE |
+|---|---|---|
+| `DEPLOY` | `github.com/godfada-sa/DEPLOY-5AFFUL-V6` | 🟢 LIVE |
+| `PAIR` | `fiveafful-pair.onrender.com` | 🟢 LIVE |
+| `RELAY` | `t.me/saf_ful` | 🟢 LIVE |
+
+<details>
+<summary><code>[ DECRYPT ]</code> &nbsp; click to reveal the payload</summary>
+
+<br />
+
+> `index.js` is the whole deploy node: it fetches **5AFFUL V6**, installs the
+> packages and starts the bot. The IDs you paste are written to
+> `session_id.txt` on first boot. Nothing is hidden in the image, nothing is
+> hidden in the code — the only secret is the one you paste in.
+
+```console
+[ root@safful ]# cat index.js | head -n 3
+#!/usr/bin/env node
+'use strict';
+// upload one file. that is the whole deployment.
+```
+
+</details>
+
+<div align="center">
+
+## `[ 02 ]  //  E X E C U T E`
+
+</div>
+
+```console
+STEP 01  ->  spin up a Node.js 20+ panel
+STEP 02  ->  drop index.js in the root
+STEP 03  ->  paste the session ID in SESSION_IDS
+STEP 04  ->  node index.js
+```
+
+```js
+const SESSION_IDS = `
+TFX-XXXX-XXXX-XXXX
+`;
+```
+
+A second number goes on a new line with a name:
+
+```js
+const SESSION_IDS = `
+TFX-XXXX-XXXX-XXXX
+shop=TFX-YYYY-YYYY-YYYY
+`;
+```
+
+| COMMAND | EFFECT |
+|---|---|
+| `node index.js` | install on first run, then boot |
+| `node index.js --update` | re-download, keep `session/`, `data/`, `accounts/`, `session_id.txt` |
+| `BOT_NO_START=1 node index.js` | install only, do not boot |
+
+> [!WARNING]
+> `SESSION_ID` burns once and dies in **5 minutes**. Paste, then boot. No second chances.
+
+> [!CAUTION]
+> This is a WhatsApp bot. WhatsApp does not officially allow bots. Use a **spare number**, never your main one. Never share your session ID or pairing code.
+
+<div align="center">
+
+## `[ 03 ]  //  S Y S T E M   S P E C S`
+
+</div>
+
+```console
+root@safful:~$ ./5afful --info
+name ............ 5AFFUL V6
+runtime ......... Node.js 20+
+commands ........ 346 / 15 categories
+defense ......... antilink :: antispam :: antiraid :: antibot
+payload ......... stickers :: downloads :: games :: tools
+login ........... fiveafful-pair.onrender.com
+```
+
+<div align="center">
+
+```console
+[ connection closed ]
+> no logs kept. no keys leaked. no trace left.
+> logout
+```
+
+**[`git clone https://github.com/godfada-sa/DEPLOY-5AFFUL-V6.git`](https://github.com/godfada-sa/DEPLOY-5AFFUL-V6.git)**
+
+`SAFFUL V6 // MIT // made by Safful`
+
+</div>
